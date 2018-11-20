@@ -5,34 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daily Journal</title>
-    <link rel="stylesheet" href="journal.css">
+    <link rel="stylesheet" href="styles/journal.css">
 </head>
 <body>
     <header>
         <h1>Daily Journal</h1>
     </header>
-    <form action="">
+    <form action="" class="container">
         <fieldset>
             <label for "journalDate">Date of Entry</label>
-        </fieldset>
-
-        <fieldset>
             <input type="date" name="journalDate" id = "journalDate">
         </fieldset>
 
         <fieldset>
+            <label for "concepts">Concepts Covered</label>
             <input type="text" name="concepts" id="concepts">
         </fieldset>
 
         <fieldset>
-            <textarea name="journalEntry" id="journalEntry"></textarea>
+            <label for "journalEntry">Journal Entry</label>
+            <textarea name="journalEntry" id="journalEntry" rows="5" columns="40" wrap="hard"></textarea>
         </fieldset>
 
         <fieldset>
-            <select></select>
+            <label for "outOfTen">Scale of 1 to 10</label>
+            <select name="outOfTen" size="10">
+                <option value="One">One</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
+                <option value="Four">Four</option>
+                <option value="Five">Five</option>
+                <option value="Six">Six</option>
+                <option value="Seven">Seven</option>
+                <option value="Eight">Eight</option>
+                <option value="Nine">Nine</option>
+                <option value="Ten">Ten</option>
+            </select>
         </fieldset>
     </form>
-    <button>Record Journal Entry</button>
+    <button type="button">Record Journal Entry</button>
     
 </body>
 </html>
