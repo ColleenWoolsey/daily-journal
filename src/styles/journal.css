@@ -2,3 +2,19 @@
     display: flex;
     flex-direction: column;
 }
+
+.dateStyling {
+    background-color: #FF3B3F;
+}
+
+.conceptStyling {
+    background-color: #A9A9A9;
+}
+
+.entryStyling {
+    background-color: #EFEFEF;
+}
+
+.scaleStyling {
+    background-color: #CAEBF2;
+}

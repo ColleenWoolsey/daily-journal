@@ -9,25 +9,27 @@
 </head>
 <body>
     
-    <div class="container">
+    <div id="container">
         <form action="index.html" method="post">
             <h1>Daily Journal</h1>
             <fieldset>
                 <label for "journalDate">Date of Entry</label>
-                <input type="date" name="journal_date" id = "journalDate">
-            
+                <input type="date" name="journalDate" id = "journalDate">
+            </fieldset>
+
+            <fieldset>
                 <label for "concepts">Concepts Covered</label>
-                <input type="text" name="journal_concepts" id="concepts">
+                <input type="text" name="concepts" id="concepts">
             </fieldset>
            
             <fieldset>           
                 <label for "journalEntry">Journal Entry</label>
-                <textarea name="journal_entry" id="journalEntry" rows="5" columns="40" wrap="hard"></textarea>
+                <textarea name="journalEntry" id="journalEntry" rows="5" columns="40" wrap="hard"></textarea>
             </fieldset>
 
             <fieldset>
                 <label for "out_of_ten">Scale of 1 to 10</label>
-                <select name="out_of_ten" id="outOfTen" size="10">
+                <select name="out_of_ten" id="outOfTen" size="3">
                     <option value="One">One</option>
                     <option value="Two">Two</option>
                     <option value="Three">Three</option>
@@ -43,6 +45,6 @@
         </form>
         <button type="submit">Record Journal Entry</button>
     </div>
-    
+   <script src="/scripts/journal.js"></script>
 </body>
 </html>
