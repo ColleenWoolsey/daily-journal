@@ -40,23 +40,25 @@ const ventry = function(style, jcontent) {
             rows="5" columns="40" wrap="hard">"${jcontent}"
             </textarea>
         </fieldset>`
-}  //listen for a keypress event on textarea?????
+}
 
-const vten = function(style, jmood ) {
-    return `<fieldset class="${style}">
-            <label for "out_of_ten">Scale of 1 to 10</label>
-            <select name="out_of_ten" id="outOfTen" size="3">
-                <option value="One">One</option>
-                <option value="Two">Two</option>
-                <option value="Three">Three</option>
-                <option value="Four">Four</option>
-                <option value="Five">Five</option>
-                <option value="Six">Six</option>
-                <option value="Seven">Seven</option>
-                <option value="Eight">Eight</option>
-                <option value="Nine">Nine</option>
-                <option value="Ten">Ten</option>
-            </select>
+
+    const vten = function(style, mood) {
+       return `<fieldset class="${style}">
+        <label for "out_of_ten">Scale of 1 to 10</label>
+        <select name="out_of_ten" id="mypick" value="${mood}">
+            <option>Current Value: ${mood}</option>
+            <option value="One">One</option>
+            <option value="Two">Two</option>
+            <option value="Three">Three</option>
+            <option value="Four">Four</option>
+            <option value="Five">Five</option>
+            <option value="Six">Six</option>
+            <option value="Seven">Seven</option>
+            <option value="Eight">Eight</option>
+            <option value="Nine">Nine</option>
+            <option value="Ten">Ten</option>
+          </select>
         </fieldset>`
 }
 
@@ -128,6 +130,6 @@ const container = document.querySelector("#container");
 //   return journalEntries.concepts === "Array Methods" });
 // console.log(index)
 
-
+ 
 
    
