@@ -1,24 +1,16 @@
-const journalEntries = [
-    {
+let arrayOfEntries = [];
 
-        date: "2018-11-27",
-        concepts: "Array methods",
-        entry: "Felt hopeful ... like catching up was possible",
-        out_of_ten: "Seven"
-    },
-    {
-        date: "2018-11-28",
-        concepts: "Array methods",
-        entry: "Distracted by K's problems",
-        out_of_ten: "Six"
-    },
-    {
-        date: "2018-11-29",
-        concepts: "Array methods",
-        entry: "Hours and hours of teaching today. Overview good, but hard to say how much was assimilated. Hard to stay awake. Few questions asked.",
-        out_of_ten: "Five"
-    }
-]
+fetch("http://localhost:3000/entries")
+    .then(response => response.json())
+    .then(parsedEntries => {
+        console.table(parsedEntries);
+        arrayOfEntries = parsedEntries;
+        console.log("The array length is: " + arrayOfEntries.length);
+    });
+        console.table(arrayOfEntries);
+        console.log("The array length is: " + arrayOfEntries.length);
+        
+
 const vdate = function(style, jDate) {
 return `<fieldset class="${style}">
             <label for "date">Date of Entry</label>
@@ -69,15 +61,17 @@ const makeJournalEntryComponent = function(date, concepts, entry, out_of_ten) {
         ${vconcepts("conceptStyling", concepts)}
         ${ventry("entryStyling", entry)}
         ${vten("scaleStyling", out_of_ten)}
-</article>`
+    </article>`
 }
+console.log(makeJournalEntryComponent());
 
 const container = document.querySelector("#container");
-
-    journalEntries.forEach(function(journalEntry) {
-    let entryComponent = "";
+                console.log(container);                
+  
+arrayOfEntries.forEach(journalEntry => {
+    entryComponent = "0";
     entryComponent = makeJournalEntryComponent(journalEntry.date, journalEntry.concepts, journalEntry.entry, journalEntry.out_of_ten)
-   
+    
     let addJournalEntries = document.createElement('article');
     addJournalEntries.innerHTML = entryComponent;
     document.querySelector('div').appendChild(addJournalEntries);
