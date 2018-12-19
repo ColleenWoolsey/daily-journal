@@ -1,24 +1,18 @@
-const journalEntries = [
-    {
+fetch("http://localhost:3000/entries")
+    .then(response => response.json())
+    .then(parsedEntries => {
+        console.table(parsedEntries);
+        const container = document.querySelector("#container");
 
-        date: "2018-11-27",
-        concepts: "Array methods",
-        entry: "Felt hopeful ... like catching up was possible",
-        out_of_ten: "Seven"
-    },
-    {
-        date: "2018-11-28",
-        concepts: "Array methods",
-        entry: "Distracted by K's problems",
-        out_of_ten: "Six"
-    },
-    {
-        date: "2018-11-29",
-        concepts: "Array methods",
-        entry: "Hours and hours of teaching today. Overview good, but hard to say how much was assimilated. Hard to stay awake. Few questions asked.",
-        out_of_ten: "Five"
-    }
-]
+        parsedEntries.forEach(journalEntry => {
+            entryComponent = makeJournalEntryComponent(journalEntry.date, journalEntry.concepts, journalEntry.entry, journalEntry.out_of_ten)
+            let addJournalEntries = document.createElement('article');
+            addJournalEntries.innerHTML = entryComponent;
+            document.querySelector('div').appendChild(addJournalEntries);
+            console.log(entryComponent)        
+        })
+    });        
+
 const vdate = function(style, jDate) {
 return `<fieldset class="${style}">
             <label for "date">Date of Entry</label>
@@ -32,7 +26,7 @@ const vconcepts = function(style, jconcepts) {
             <input type="text" name="concepts" id="concepts" value="${jconcepts}">
         </fieldset>`
 }
- {}
+
 const ventry = function(style, jcontent) {
     return `<fieldset class="${style}">           
             <label for "entry">Journal Entry</label>
@@ -41,7 +35,6 @@ const ventry = function(style, jcontent) {
             </textarea>
         </fieldset>`
 }
-
 
     const vten = function(style, mood) {
        return `<fieldset class="${style}">
@@ -69,23 +62,8 @@ const makeJournalEntryComponent = function(date, concepts, entry, out_of_ten) {
         ${vconcepts("conceptStyling", concepts)}
         ${ventry("entryStyling", entry)}
         ${vten("scaleStyling", out_of_ten)}
-</article>`
+    </article>`
 }
-
-const container = document.querySelector("#container");
-
-    journalEntries.forEach(function(journalEntry) {
-    let entryComponent = "";
-    entryComponent = makeJournalEntryComponent(journalEntry.date, journalEntry.concepts, journalEntry.entry, journalEntry.out_of_ten)
-   
-    let addJournalEntries = document.createElement('article');
-    addJournalEntries.innerHTML = entryComponent;
-    document.querySelector('div').appendChild(addJournalEntries);
-
-    console.log(entryComponent)
-});
-
-
 
 // const renderJournalEntries = (entries) => {
 //     let entryComponent = "";
@@ -93,8 +71,7 @@ const container = document.querySelector("#container");
 //     renderJournalEntries.innerHTML = entryComponent;
 //     document.createElement('article').appendChild(renderJournalEntries);
 // } document.querySelector('form')
-// renderJournalEntries(journalEntries)
-  
+// renderJournalEntries(journalEntries)  
 
 // Purpose: To render all journal entries to the DOM
 // Arguments: entries (array of objects)
@@ -128,8 +105,4 @@ const container = document.querySelector("#container");
 //journalEntires.findIndex(function(entry, index) {
 //   console.log(entry)
 //   return journalEntries.concepts === "Array Methods" });
-// console.log(index)
-
- 
-
-   
+// console.log(index)   
