@@ -1,3 +1,4 @@
+
 DAILY JOURNAL PART 1 AND 2
 
 1. Built a form for entering in journal entries.
