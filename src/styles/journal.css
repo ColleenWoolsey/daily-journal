@@ -1,13 +1,13 @@
-.container fieldset {
+.containerFieldset {
     display: flex;
     flex-direction: column;
 }
 
-.dateStyling {
+.journalDateStyling {
     background-color: #FF3B3F;
 }
 
-.conceptStyling {
+.conceptsStyling {
     background-color: #A9A9A9;
 }
 
@@ -15,7 +15,7 @@
     background-color: #EFEFEF;
 }
 
-.scaleStyling {
+.moodStyling {
     background-color: #CAEBF2;
 }
 
