@@ -1,23 +1,247 @@
 {
-"entries": [
+  "entries": [
     {
-
-        "date": "2018-11-27",
-        "concepts": "Array methods",
-        "entry": "Felt hopeful ... like catching up was possible",
-        "out_of_ten": "Seven"
+      "id": "1",
+      "journalDate": "2018-11-27",
+      "concepts": "Array methods",
+      "entry": "Felt hopeful ... like catching up was possible",
+      "mood": "Seven"
     },
     {
-        "date": "2018-11-28",
-        "concepts": "Array methods",
-        "entry": "Distracted by K's problems",
-        "out_of_ten": "Six"
+      "id": "2",
+      "journalDate": "2018-11-28",
+      "concepts": "Array methods",
+      "entry": "Distracted by K's problems",
+      "mood": "Six"
     },
     {
-        "date": "2018-11-29",
-        "concepts": "Array methods",
-        "entry": "Hours and hours of teaching today. Overview good, but hard to say how much was assimilated. Hard to stay awake. Few questions asked.",
-        "out_of_ten": "Five"
+      "id": "3",
+      "journalDate": "2018-11-29",
+      "concepts": "Array methods",
+      "entry": "Hours and hours of teaching today. Overview good, but hard to say how much was assimilated. Hard to stay awake. Few questions asked.",
+      "mood": "Five"
+    },
+    {
+      "id": "9R6yzIZ"
+    },
+    {
+      "id": "Xaor4Ky"
+    },
+    {
+      "id": "tAFA4w8"
+    },
+    {
+      "id": "ziNwhrZ"
+    },
+    {
+      "id": "WSi5EVj"
+    },
+    {
+      "id": "0Lrk4RN"
+    },
+    {
+      "id": "XcByEOd"
+    },
+    {
+      "id": "U~0AzYx"
+    },
+    {
+      "id": "jeDpf6W"
+    },
+    {
+      "id": "7cGu6nS"
+    },
+    {
+      "id": "Gampu72"
+    },
+    {
+      "id": "VfEg_jp"
+    },
+    {
+      "id": "Z7mmQZH"
+    },
+    {
+      "id": "NeHP~ga"
+    },
+    {
+      "id": "A412Kl7"
+    },
+    {
+      "id": "4LadK4W"
+    },
+    {
+      "id": "p051X5b"
+    },
+    {
+      "id": "PH2zbbu"
+    },
+    {
+      "id": "9gAD_~C"
+    },
+    {
+      "id": "cBddpoG"
+    },
+    {
+      "id": "f3FImND"
+    },
+    {
+      "id": "LNYqot0"
+    },
+    {
+      "id": "ksaYE~2"
+    },
+    {
+      "id": "7iYFYy_"
+    },
+    {
+      "id": "kSA88Nn"
+    },
+    {
+      "id": "8EQ370L"
+    },
+    {
+      "id": "EkTPikh"
+    },
+    {
+      "id": "hD5PMao"
+    },
+    {
+      "id": "LWfOJyj"
+    },
+    {
+      "id": "7VY1REM"
+    },
+    {
+      "id": "nlBQ6Eo"
+    },
+    {
+      "id": "d3H1lHV"
+    },
+    {
+      "id": "xn4c_mr"
+    },
+    {
+      "id": "ZqtHKPT"
+    },
+    {
+      "id": "Bv6ZfrF"
+    },
+    {
+      "id": "hsglv7c"
+    },
+    {
+      "id": "UuxZaoh"
+    },
+    {
+      "id": "1LLTq2U"
+    },
+    {
+      "id": "lypQNjC"
+    },
+    {
+      "id": "2wfstCd"
+    },
+    {
+      "id": "Z2Rpwez"
+    },
+    {
+      "id": "BA5~JYg"
+    },
+    {
+      "id": "LDsqk~1"
+    },
+    {
+      "id": "~6UW115"
+    },
+    {
+      "id": "IMZ19U4"
+    },
+    {
+      "id": "crAQNab"
+    },
+    {
+      "id": "gvEj2J~"
+    },
+    {
+      "id": "okpClQF"
+    },
+    {
+      "id": "RlMMLql"
+    },
+    {
+      "id": "0p_qQH~"
+    },
+    {
+      "id": "P7Z5LOL"
+    },
+    {
+      "id": "wgwXNzp"
+    },
+    {
+      "id": "0Wy68Ws"
+    },
+    {
+      "id": "E4Ot7Qn"
+    },
+    {
+      "id": "g4s5NZz"
+    },
+    {
+      "id": "kE8TVSb"
+    },
+    {
+      "id": "y_JBA6B"
+    },
+    {
+      "id": "M9utp6d"
+    },
+    {
+      "id": "Ruh2WQq"
+    },
+    {
+      "id": "J~Na9P9"
+    },
+    {
+      "id": "2BLAnqR"
+    },
+    {
+      "id": "ki5DPht"
+    },
+    {
+      "id": "iyRbZ1g"
+    },
+    {
+      "id": "w5tdAYC"
+    },
+    {
+      "id": "yihRnru"
+    },
+    {
+      "id": "_eQiWUV"
+    },
+    {
+      "id": "ZwoaUPz"
+    },
+    {
+      "id": "Y5Pt2bD"
+    },
+    {
+      "id": "Oy0vj~X"
+    },
+    {
+      "id": "tDXhxpR"
+    },
+    {
+      "id": "vkl~4Gx"
+    },
+    {
+      "id": "LLIPku2"
+    },
+    {
+      "id": "IEsjt8~"
+    },
+    {
+      "id": "ubGCy1K"
     }
   ]
 }

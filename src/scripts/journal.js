@@ -6,4 +6,4 @@
     to get the data and display it.
 */
 //objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
-entriesDOM.renderJournalEntries();
+
