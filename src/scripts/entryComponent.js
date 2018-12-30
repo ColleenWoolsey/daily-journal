@@ -1,59 +1,69 @@
 /* entryComponent.js - This module is responsible for taking data,
 building out journal entry HTML DOM components and returning those
 components. */
-
+// pattern="[A-Za-z(){}}:;0-9"
 const entryComponent = {
     name: "Dom Builder Component",
 
-    vdateAndConcepts (style, label, title, type, name, id) {
+    vdate (style, label, title, type, name, id) {
         return `<fieldset class="${style}">
                     <label for "${label}">${title}</label>
-                    <input type="${type}" name="${name}" id ="${id}">
+                    <input type="${type}" name="${name}" id ="${id}" required>
                 </fieldset>`
     },
 
-    ventry (style, title, name, id) {
+     vconcepts (style, label, title, type, name, id, jvalue) {
+        return `<fieldset class="${style}">
+                    <label for "${label}">${title}</label>
+                    <input type="${type}" name="${name}" id ="${id}" required value="${jvalue}" pattern="[A-Za-z(){}}:;0-9">
+                </fieldset>`
+    },
+
+    ventry (style, title, name, id, jvalue) {
         return `<fieldset class="${style}">           
                 <label for "entry">${title}</label>
-                <textarea name="${name}" id="${id}" rows="5" columns="40" wrap="hard">
+                <textarea name="${name}" id="${id}" required value="${jvalue}">
                 </textarea>
             </fieldset>`
     },
 
-    vmood (style, title, name, id) {
+    vmood (style, title, name, id, jvalue) {
         return `<fieldset class="${style}">
          <label for "mood">${title}</label>
-         <select name="${name}" id="${id}">
-             <option value="One">One</option>
+         <select name="${name}" id="${id}" required value="${jvalue}">
+             <option value=""></option> 
+             <option value=""></option><option value="One">One</option>
              <option value="Two">Two</option>
              <option value="Three">Three</option>
              <option value="Four">Four</option>
              <option value="Five">Five</option>
-             <option value="Six">Six</option>
-             <option value="Seven">Seven</option>
-             <option value="Eight">Eight</option>
-             <option value="Nine">Nine</option>
-             <option value="Ten">Ten</option>
-           </select>
+         </select>
          </fieldset>`
     },
 
     makeJournalEntryComponent () {
-        return `<article>
+        return `
             <h1>Daily Journal</h1>
-            ${entryComponent.vdateAndConcepts("journalDateStyling containerFieldset", "journalDate", "Date of Entry", "date", "journalDate", "journal__date")}
-            ${entryComponent.vdateAndConcepts("conceptsStyling containerFieldset", "concepts", "Concepts Covered", "text", "concepts", "journal__concepts")}
-            ${entryComponent.ventry("entryStyling containerFieldset", "Journal Entry", "entry", "journal__entry")}
-            ${entryComponent.vmood("moodStyling containerFieldset","Scale of 1 to 10", "mood", "journal__mood")}
-        </article>`
-    }
-};
+            ${entryComponent.vdate("journalDateStyling containerFieldset", "journalDate", "Date of Entry", "date", "journalDate", "journal__date")}
+            ${entryComponent.vconcepts("conceptsStyling containerFieldset", "concepts", "Concepts Covered", "text", "concepts", "journal__concepts", "")}
+            ${entryComponent.ventry("entryStyling containerFieldset", "Journal Entry", "entry", "journal__entry", "")}
+            ${entryComponent.vmood("moodStyling containerFieldset","Scale of 1 to 5", "mood", "journal__mood", "")}
+        `
+    },
 
-entryComponent.makeJournalEntryComponent();
-addForm = entryComponent.makeJournalEntryComponent();
-let container = document.querySelector("#container");
-container.innerHTML = addForm;
-console.log(addForm);
+    appendInputForm () {
+        addForm = entryComponent.makeJournalEntryComponent();
+        let container = document.querySelector("#journalForm");
+        container.innerHTML = addForm;
+        console.log(addForm);
+    },
+
+    addEventListener () {
+    let entryBtn = document.querySelector("#entry__save");
+    console.log(entryBtn.innerHTML);
+    entryBtn.addEventListener("submit", entriesDOM.handleFormSubmission());
+    }
+}
 
 // const entryComponent = {
 //     name: "Dom Builder Component", 

@@ -7,3 +7,5 @@
 */
 //objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
 
+entryComponent.appendInputForm();
+entryComponent.addEventListener();

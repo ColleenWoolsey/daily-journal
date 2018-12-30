@@ -3,23 +3,33 @@
 const entriesDOM = {
     name: "Appending to DOM",
 
-    renderJournalEntries() {
-    const jdate = document.querySelector("#journal__date").value;
-    const jconcepts = document.querySelector("#journal__concepts").value;
-    const jentry = document.querySelector("#journal_entry").value;
-    const jmood = document.querySelector("#journal__mood").value;
+    handleFormSubmission() {     
+    console.log("Button was clicked")
+
+    let jdate = document.querySelector("#journal__date").value;
+    console.log(jdate);
+           
+    let jconcepts = document.querySelector("#journal__concepts").value;
+    console.log(jconcepts);
     
-    const entryObject = {
-        journalDate: jdate,
-        concepts: jconcepts,
-        entry: jentry,
-        mood: jmood
-        }
+    let jentry = document.querySelector("#journal__entry").value;
+    console.log(jentry);
+    
+    let jmood = document.querySelector("#journal__mood").value;
+    console.log(jmood);
+        
+    let entryObject = {
+      "journalDate": jdate,
+      "concepts": jconcepts,
+      "entry": jentry,
+      "mood": jmood
+    }
     console.log(entryObject)
-    // Post to API and pass legoToSave
-    //data.saveJournalEntry(entryObject);
+    // Post to API 
+    data.saveJournalEntry(entryObject);
     }
 }
+
 
 
     // searchJournalEntries() {        
