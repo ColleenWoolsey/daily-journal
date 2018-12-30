@@ -2,7 +2,7 @@ const data = {
     name: "Fetch Calls",
     
     saveJournalEntry (entryObject) {
-        fetch("http://localhost:8088/entries", {
+        fetch("http://localhost:3000/entries", {
             method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -12,17 +12,17 @@ const data = {
     },
 
     getJournalEntries () {
-        return fetch("http://localhost:8088/entries")
+        return fetch("http://localhost:3000/entries")
             .then(response => response.json())
     },
     queryJournalEntries(userInput) {
-        return fetch(`http://localhost:8088/entriess?q=${userInput}`)
+        return fetch(`http://localhost:3000/entriess?q=${userInput}`)
             .then(response => response.json());
     }
 };
 
-data.saveJournalEntry();
-data.getJournalEntries();
+
+//data.getJournalEntries();
 //data.queryJournalEntries();
 
 // Below is an example configuration for launching your
