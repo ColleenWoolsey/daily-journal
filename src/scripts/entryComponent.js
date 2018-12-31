@@ -41,6 +41,13 @@ const entryComponent = {
          </fieldset>`
     },
 
+    // ventryBtn (type, id, title) {
+    //     return `
+    //     <button type="${type}" id="${id}">${title}</button>
+    //     `
+    //     ${entryComponent.ventryBtn("submit", "#entry__save", "Record Journal Entry")}
+    // },
+    
     makeJournalEntryComponent () {
         return `
             <h1>Daily Journal</h1>
@@ -52,16 +59,20 @@ const entryComponent = {
     },
 
     appendInputForm () {
+        console.log("Hello");
         addForm = entryComponent.makeJournalEntryComponent();
-        let container = document.querySelector("#journalForm");
+        const container = document.querySelector("#journalForm");
         container.innerHTML = addForm;
         console.log(addForm);
     },
-
+    
     addEventListener () {
-    let entryBtn = document.querySelector("#entry__save");
-    console.log(entryBtn.innerHTML);
-    entryBtn.addEventListener("submit", entriesDOM.handleFormSubmission());
+        let entryBtn = document.querySelector("#entry__save");
+        console.log(entryBtn.innerHTML)
+        entryBtn.addEventListener("click", function() {
+            entriesDOM.handleFormSubmission();
+        });
+        console.log("eventListener is added");
     }
 }
 
