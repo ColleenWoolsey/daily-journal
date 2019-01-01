@@ -29,7 +29,8 @@ const entriesDOM = {
     data.saveJournalEntry(entryObject);
     },
 
-    handleRadioSubmission() {
+    handleRadioSubmission(event) {
+        document.getElementById(event.target.value).innerHTML = event.target;
         console.log("Radio Button submission");
     }
 }
