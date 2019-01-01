@@ -34,3 +34,10 @@ OPTIONAL CHALLENGE B: Entry Form Component
 1. Create a module that defines a function for building the form fields dynamically instead of them being hard-coded in the HTML
 OPTIONAL CHALLENGE C: Creating Method Abstractions
 1. Write a method in your API module that performs a POST and a GET, then use that method in the event listener.
+
+DAILY JOURNAL - PART 6
+1. Use radio buttons
+2. Apply your knowledge of event listeners
+3. Use the filter() method on an array
+4. Use the find() method on an array to show journal entries that match a certain mood
+5. Stretch your understanding of how each of the components can be used together in a non-sequential way.

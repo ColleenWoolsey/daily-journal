@@ -27,6 +27,10 @@ const entriesDOM = {
     console.log(entryObject)
     // Post to API 
     data.saveJournalEntry(entryObject);
+    },
+
+    handleRadioSubmission() {
+        console.log("Radio Button submission");
     }
 }
 
