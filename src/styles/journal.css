@@ -19,6 +19,14 @@
     background-color: #CAEBF2;
 }
 
+.entryBtnStyling {
+    background-color: #A9A9A9;
+}
+
+.radioStyling {
+    background-color: #EFEFEF;
+}
+
 #mypick {
     font-weight: bold;
 }

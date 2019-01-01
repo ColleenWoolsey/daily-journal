@@ -31,8 +31,8 @@ const entryComponent = {
         return `<fieldset class="${style}">
          <label for "mood">${title}</label>
          <select name="${name}" id="${id}" required value="${jvalue}">
-             <option value=""></option> 
-             <option value=""></option><option value="One">One</option>
+             <option value="null"></option> 
+             <option value="One">One</option>
              <option value="Two">Two</option>
              <option value="Three">Three</option>
              <option value="Four">Four</option>
@@ -40,13 +40,6 @@ const entryComponent = {
          </select>
          </fieldset>`
     },
-
-    // ventryBtn (type, id, title) {
-    //     return `
-    //     <button type="${type}" id="${id}">${title}</button>
-    //     `
-    //     ${entryComponent.ventryBtn("submit", "#entry__save", "Record Journal Entry")}
-    // },
     
     makeJournalEntryComponent () {
         return `
@@ -59,11 +52,15 @@ const entryComponent = {
     },
 
     appendInputForm () {
-        console.log("Hello");
         addForm = entryComponent.makeJournalEntryComponent();
         const container = document.querySelector("#journalForm");
         container.innerHTML = addForm;
         console.log(addForm);
+
+        addRadio = entryComponent.addRadioButton ();
+        const containerRadio = document.querySelector("#entry__filter");
+        containerRadio.innerHTML = addRadio;
+        console.log(addRadio);
     },
     
     addEventListener () {
@@ -72,10 +69,66 @@ const entryComponent = {
         entryBtn.addEventListener("click", function() {
             entriesDOM.handleFormSubmission();
         });
-        console.log("eventListener is added");
+    },
+
+    radioLabelInput (id, value, labelFor, title) {
+        return `
+        <input type="radio" id="${id}" name="mood" value="${value}">
+        <label for="${labelFor}">${title}</label>`
+    },
+
+    addRadioButton () {
+        return `
+        <fieldset class="radioStyling">
+        <legend>Filter Journal Entries by Number</legend>
+        ${entryComponent.radioLabelInput("choice1", "One", "choice1", "One")}
+        ${entryComponent.radioLabelInput("choice2", "Two", "choice2", "Two")}
+        ${entryComponent.radioLabelInput("choice3", "Three", "choice3", "Three")}
+        ${entryComponent.radioLabelInput("choice4", "Four", "choice4", "Four")}
+        ${entryComponent.radioLabelInput("choice5", "Five", "choice5", "Five")}
+        </fieldset>`
+    },
+
+    addRadioListener () {
+        let radioButtonArray = document.getElementsByName("mood");
+        console.log(radioButtonArray);
+        radioButtonArray.forEach(function (radioButton) {
+            radioButton.addEventListener("click", event => {
+                const mood = event.target.value;
+                entriesDOM.handleRadioSubmission();
+                console.log(event.target.value);
+            })
+        })
     }
 }
 
+        // let choice1Btn = document.querySelector("#choice1");
+        // console.log(choice1Btn.innerHTML)
+        // choice1Btn.addEventListener("click", function() {
+        //     entriesDOM.handleRadioSubmission();
+        // });
+        // let choice2Btn = document.querySelector("#choice2");
+        // console.log(choice2Btn.innerHTML)
+        // choice2Btn.addEventListener("click", function() {
+        //     entriesDOM.handleRadioSubmission();
+        // });
+        // let choice3Btn = document.querySelector("#choice3");
+        // console.log(choice3Btn.innerHTML)
+        // choice3Btn.addEventListener("click", function() {
+        //     entriesDOM.handleRadioSubmission();
+        // });
+        // let choice4Btn = document.querySelector("#choice4");
+        // console.log(choice4Btn.innerHTML)
+        // choice4Btn.addEventListener("click", function() {
+        //     entriesDOM.handleRadioSubmission();
+        // });
+        // let choice5Btn = document.querySelector("#choice5");
+        // console.log(choice5Btn.innerHTML)
+        // choice5Btn.addEventListener("click", function() {
+        //     entriesDOM.handleRadioSubmission();
+        // });       
+
+// ORIGINAL HTML
 // const entryComponent = {
 //     name: "Dom Builder Component", 
 //     vdate () {

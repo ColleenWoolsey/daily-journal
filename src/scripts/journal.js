@@ -9,3 +9,5 @@
 
 entryComponent.appendInputForm();
 entryComponent.addEventListener();
+entryComponent.addRadioButton();
+entryComponent.addRadioListener();
