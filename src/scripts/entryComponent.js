@@ -15,7 +15,7 @@ const entryComponent = {
      vconcepts (style, label, title, type, name, id, jvalue) {
         return `<fieldset class="${style}">
                     <label for "${label}">${title}</label>
-                    <input type="${type}" name="${name}" id ="${id}" required value="${jvalue}" pattern="[A-Za-z(){}}:;0-9">
+                    <input type="${type}" name="${name}" id ="${id}" required value="${jvalue}" pattern="[A-Z][a-z](){}}:;0-9">
                 </fieldset>`
     },
 
@@ -44,10 +44,20 @@ const entryComponent = {
     makeJournalEntryComponent () {
         return `
             <h1>Daily Journal</h1>
-            ${entryComponent.vdate("journalDateStyling containerFieldset", "journalDate", "Date of Entry", "date", "journalDate", "journal__date")}
-            ${entryComponent.vconcepts("conceptsStyling containerFieldset", "concepts", "Concepts Covered", "text", "concepts", "journal__concepts", "")}
+            ${entryComponent.vdate("journalDateStyling containerFieldset", "journalDate", "Date of Entry", "date", "journalDate", "journal__date", )}
+            ${entryComponent.vconcepts("conceptsStyling containerFieldset", "concepts", "Concepts Covered", "text", "concepts", "journal__concepts", "mm/dd/yyyy")}
             ${entryComponent.ventry("entryStyling containerFieldset", "Journal Entry", "entry", "journal__entry", "")}
             ${entryComponent.vmood("moodStyling containerFieldset","Scale of 1 to 5", "mood", "journal__mood", "")}
+        `
+    },
+
+    entryList (concepts, entry, jdate) {
+        return `
+        <article>
+            <p>${jconcepts}</p><br>
+            <p>${jentry}</p><br>
+            <p>${jdate}<p><br><br>
+        </article>
         `
     },
 
@@ -94,11 +104,12 @@ const entryComponent = {
         console.log(radioButtonArray);
         radioButtonArray.forEach(function (addRadio) {
             console.log(addRadio)            
-            addRadio.addEventListener("click", function() {
-            entriesDOM.handleRadioSubmission();      
+            addRadio.addEventListener("click", event => {
+                let vmood = event.target.value;
+                console.log(vmood);
+                entriesDOM.handleRadioSubmission(vmood);      
             });
           })
-                
         }
     }    
 

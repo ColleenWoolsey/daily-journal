@@ -25,13 +25,27 @@ const entriesDOM = {
       "mood": jmood
     }
     console.log(entryObject)
-    // Post to API 
+
     data.saveJournalEntry(entryObject);
     },
 
-    handleRadioSubmission(event) {
-        document.getElementById(event.target.value).innerHTML = event.target;
-        console.log("Radio Button submission");
+    handleRadioSubmission(vmood) {
+        console.log(`Radio Button ${vmood} was clicked`);
+        data.getJournalEntries()
+        .then(allEntries => {
+            console.log(allEntries);
+            let moodFilter = allEntries.filter(mood => mood === vmood);
+            console.log(moodFilter)
+            
+            moodFilter.forEach(journalEntry => {
+                let jdate = moodFilter.journalDate;
+                let jconcepts = moodFilter.concepts;
+                let jentry = moodFilter.entry;
+                let jmood = moodFilter.mood;
+                entryHTML.innerHTML = entryComponent.entryList();
+                const outputDiv = document.querySelector("#output");
+            })
+        })
     }
 }
 

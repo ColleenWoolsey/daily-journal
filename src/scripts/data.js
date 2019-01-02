@@ -22,9 +22,6 @@ const data = {
 };
 
 
-//data.getJournalEntries();
-//data.queryJournalEntries();
-
 // Below is an example configuration for launching your
 // API when Grunt starts. In this configuration, the API
 // will be listening on port 8088. It will watch
